@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import ThoughtInput from './ThoughtInput';
+import ThoughtsDisplay from './ThoughtsDisplay';
 import './App.css';
 
-function App() {
+type Thought = {
+  id: number;
+  content: string;
+};
+
+const App: React.FC = () => {
+  const [thoughts, setThoughts] = useState<Thought[]>([]);
+  const [showThoughts, setShowThoughts] = useState(false);
+
+  const addThought = (thought: string) => {
+    setThoughts((prevThoughts) => [
+      ...prevThoughts,
+      { id: prevThoughts.length, content: thought },
+    ]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThoughtInput onAddThought={addThought} />
+      {showThoughts && <ThoughtsDisplay thoughts={thoughts} />}
+      <button className="chevron-button" onClick={() => setShowThoughts(!showThoughts)}>
+        {showThoughts ? 'Hide Thoughts' : 'Show Thoughts'}
+      </button>
     </div>
   );
-}
+};
 
 export default App;
