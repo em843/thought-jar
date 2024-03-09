@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/thought-jar/static/css/main.f855e6bc.css",
+    "main.js": "/thought-jar/static/js/main.0f2abc35.js",
+    "static/js/453.dc3c73b8.chunk.js": "/thought-jar/static/js/453.dc3c73b8.chunk.js",
+    "static/media/logo.svg": "/thought-jar/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/thought-jar/index.html",
+    "main.f855e6bc.css.map": "/thought-jar/static/css/main.f855e6bc.css.map",
+    "main.0f2abc35.js.map": "/thought-jar/static/js/main.0f2abc35.js.map",
+    "453.dc3c73b8.chunk.js.map": "/thought-jar/static/js/453.dc3c73b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.0f2abc35.js"
+  ]
+}
