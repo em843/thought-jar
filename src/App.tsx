@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import ThoughtInput from './ThoughtInput';
-import ThoughtsDisplay from './ThoughtsDisplay';
-import './App.css';
+import React, { useState } from "react";
+import ThoughtInput from "./components/ThoughtInput";
+import ThoughtsDisplay from "./components/ThoughtsDisplay";
+import MyButton from "./components/MyButton";
 
 type Thought = {
   id: number;
@@ -20,13 +20,22 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <ThoughtInput onAddThought={addThought} />
-      {showThoughts && <ThoughtsDisplay thoughts={thoughts} />}
-      <button className="chevron-button" onClick={() => setShowThoughts(!showThoughts)}>
-        {showThoughts ? 'Hide Thoughts' : 'Show Thoughts'}
-      </button>
-    </div>
+    <>
+      <div className="absolute top-0 left-0 m-4 hover:cursor-pointer">
+        <h1 className="text-2xl text-emerald-500 lowercase hover:text-emerald-600">
+          thoughtjar
+        </h1>
+        <div className="underline-animation"></div>
+      </div>
+
+      <div className="flex flex-col items-center justify-center h-screen">
+        <ThoughtInput onAddThought={addThought} />
+        <MyButton onClick={() => setShowThoughts(!showThoughts)}>
+          {showThoughts ? "Hide Thoughts" : "Show Thoughts"}
+        </MyButton>
+        {showThoughts && <ThoughtsDisplay thoughts={thoughts} />}
+      </div>
+    </>
   );
 };
 

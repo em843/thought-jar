@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ThoughtInput.css";
+import MyButton from "./MyButton";
 
 type Props = {
   onAddThought: (thought: string) => void;
@@ -20,18 +20,16 @@ const ThoughtInput: React.FC<Props> = ({ onAddThought }) => {
   };
 
   return (
-    <div className="thought-input-container">
+    <div className="flex items-center justify-between p-4">
       <input
         type="text"
-        className="thought-input"
+        className="px-4 py-2 mr-4 border-b-2 border-gray-200 focus:outline-none focus:border-emerald-400"
         value={thought}
         onChange={handleChange}
         maxLength={200}
         placeholder="Enter your thought..."
       />
-      <button className="send-button" onClick={handleSubmit}>
-        Send
-      </button>
+      <MyButton onClick={handleSubmit}> Send</MyButton>
     </div>
   );
 };

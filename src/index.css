@@ -1,13 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Add this to your global styles or a CSS file */
+.underline-animation {
+  position: absolute;
+  bottom: -2px; /* Adjust as needed */
+  left: 0;
+  right: 100%;
+  height: 2px; /* Adjust thickness as needed */
+  background-color: #10b981; /* Use the text color */
+  transition: right 0.3s ease-out;
+}
+
+/* When hovering over the h1 element, animate the pseudo element */
+h1:hover + .underline-animation {
+  right: 0;
 }
