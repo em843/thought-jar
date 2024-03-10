@@ -20,15 +20,16 @@ const ThoughtInput: React.FC<Props> = ({ onAddThought }) => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4">
+    <div className="flex items-center justify-center p-4 w-1/2">
       <input
-        type="text"
-        className="px-4 py-2 mr-4 border-b-2 border-gray-200 focus:outline-none focus:border-emerald-400"
+        className="px-4 py-2 mr-4 border-b-2 border-gray-200 focus:outline-none focus:border-emerald-400 w-full"
         value={thought}
         onChange={handleChange}
         maxLength={200}
         placeholder="Enter your thought..."
-      />
+      ></input>
+      {/* <MyTextArea/>  */}
+
       <MyButton onClick={handleSubmit}> Send</MyButton>
     </div>
   );
