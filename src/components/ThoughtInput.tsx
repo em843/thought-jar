@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "./Button";
+import StyledButton from "./StyledButton";
 import TextArea from "./TextArea";
 
 type ThoughtInputProps = {
@@ -34,7 +34,7 @@ const ThoughtInput: React.FC<ThoughtInputProps> = ({ onAddThought }) => {
       ></input>
       {/* <TextArea /> */}
 
-      <Button onClick={handleSubmit}> Send</Button>
+      <StyledButton onClick={handleSubmit}> Send</StyledButton>
     </form>
   );
 };

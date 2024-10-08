@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ThoughtInput from "./components/ThoughtInput";
 import ThoughtsDisplay from "./components/ThoughtsDisplay";
-import Button from "./components/Button";
+import StyledButton from "./components/StyledButton";
 
 type Thought = {
   id: number;
@@ -30,9 +30,9 @@ const App: React.FC = () => {
 
       <div className="flex flex-col items-center justify-center h-screen">
         <ThoughtInput onAddThought={addThought} />
-        <Button onClick={() => setShowThoughts(!showThoughts)}>
+        <StyledButton onClick={() => setShowThoughts(!showThoughts)}>
           {showThoughts ? "Hide Thoughts" : "Show Thoughts"}
-        </Button>
+        </StyledButton>
         {showThoughts && <ThoughtsDisplay thoughts={thoughts} />}
       </div>
     </>
