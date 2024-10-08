@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const MyTextArea: React.FC = () => {
+const TextArea: React.FC = () => {
   const [value, setValue] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -10,7 +10,7 @@ const MyTextArea: React.FC = () => {
 
   useEffect(() => {
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto"; 
+      textareaRef.current.style.height = "auto";
       textareaRef.current.style.height =
         textareaRef.current.scrollHeight + "px";
     }
@@ -27,4 +27,4 @@ const MyTextArea: React.FC = () => {
   );
 };
 
-export default MyTextArea;
+export default TextArea;

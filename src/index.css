@@ -16,14 +16,13 @@ code {
     monospace;
 }
 
-/* Add this to your global styles or a CSS file */
 .underline-animation {
   position: absolute;
-  bottom: -2px; /* Adjust as needed */
+  bottom: -2px;
   left: 0;
   right: 100%;
-  height: 2px; /* Adjust thickness as needed */
-  background-color: #10b981; /* Use the text color */
+  height: 2px;
+  background-color: #10b981;
   transition: right 0.3s ease-out;
 }
 

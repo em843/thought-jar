@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import MyButton from "./MyButton";
+import Button from "./Button";
+import TextArea from "./TextArea";
 
-type Props = {
+type ThoughtInputProps = {
   onAddThought: (thought: string) => void;
 };
 
-const ThoughtInput: React.FC<Props> = ({ onAddThought }) => {
+const ThoughtInput: React.FC<ThoughtInputProps> = ({ onAddThought }) => {
   const [thought, setThought] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +21,10 @@ const ThoughtInput: React.FC<Props> = ({ onAddThought }) => {
   };
 
   return (
-    <div className="flex items-center justify-center p-4 w-1/2">
+    <form
+      onSubmit={() => handleSubmit}
+      className="flex items-center justify-center p-4 w-1/2"
+    >
       <input
         className="px-4 py-2 mr-4 border-b-2 border-gray-200 focus:outline-none focus:border-emerald-400 w-full"
         value={thought}
@@ -28,10 +32,10 @@ const ThoughtInput: React.FC<Props> = ({ onAddThought }) => {
         maxLength={200}
         placeholder="Enter your thought..."
       ></input>
-      {/* <MyTextArea/>  */}
+      {/* <TextArea /> */}
 
-      <MyButton onClick={handleSubmit}> Send</MyButton>
-    </div>
+      <Button onClick={handleSubmit}> Send</Button>
+    </form>
   );
 };
 
